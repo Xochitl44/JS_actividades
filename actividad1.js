@@ -38,6 +38,9 @@ function demand() {
 
 demand();
 
+/*Bonus
+Carlos está interesado en saber la proporción de órdenes cumplidas respecto al total previsto, para tener una idea clara del rendimiento del día.*/
 
+const proporcionTotal = numOfOrder / ordersProvided
 
-
+console.log(`Esto seria la proporcion de ordenes cumplidas respecto al total previsto: ${proporcionTotal}`)
