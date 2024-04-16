@@ -76,7 +76,23 @@ console.log(dogAge(canes));
 /*
 2.- Necesito obtener una lista de perros basados en el país al que pertenecen+
 */
+const dogsArray = (dog) => {
+    //let countryDogs = []
+    //console.log(countryDogs);
+    let listofDogs = dog.forEach((dog) => {
+        //console.log(listofDogs);
+        if (dog.pais === "México") {
+            console.log("Estos perritos son de Mexico: ", [dog])
+        } else if (dog.pais === "Colombia") {
+            console.log("Estos perritos son de Colombia: ", [dog])
+        } else if (dog.paid === "Ecuador") {
+            console.log("Estos perritos son de Mexico: ", [dog])
+        } else ("El perrito pertenece a otro pais")
+    });
+    return (listofDogs)
+}
 
+console.log(dogsArray(canes))
 
 //3.- Necesito una lista de los códigos postales de los perros
 
