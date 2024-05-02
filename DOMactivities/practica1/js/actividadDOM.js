@@ -4,28 +4,28 @@ usar componentes de bootstrap como list-group
 */
 koder = [
     {
-        name: "Xochitl",
+        fullName: "Xochitl",
         lastName: "Moreno",
         age: 33,
         numberOfLanguagesSpoke: 3,
         country: "Mexico"
     },
     {
-        name: "Eduardo",
+        fullName: "Eduardo",
         lastName: "Garcia",
         age: 38,
         numberOfLanguagesSpoke: 2,
         country: "Mexico"
     },
     {
-        name: "Jozette",
+        fullName: "Jozette",
         lastName: "Goss",
         age: 33,
         numberOfLanguagesSpoke: 6,
         country: "Italy"
     },
     {
-        name: "Rebecca",
+        fullName: "Rebecca",
         lastName: "Lopez",
         age: 20,
         numberOfLanguagesSpoke: 1,
@@ -33,27 +33,22 @@ koder = [
     }
 ]
 
-//create function to create list of koders based on the objects of each koder
-let createKoderList = (koderObject) => {
-    //desestructurando el objeto con las propiedades de cada koder
-    let {name, lastName, age, numberOfLanguagesSpoke, country} = koderObject;
-    let kodersFullInfo = `First Name: ${name} Last Name: ${lastName} Age of Koder: ${age} Number of Languages Koder Can Speak: ${numberOfLanguagesSpoke} Country Koder is From: ${country}`;
-
-    //creando elementos de DOM
+//create DOM Elements in a function
+createKoderList = (koder) => {
     let koderListItem = document.createElement("li");
     koderListItem.classList.add("list-group-item");
-    let koderItemText = document.createTextNode(kodersFullInfo);
+    let koderItemText = document.createTextNode(`First Name: ${koder.fullName} Last Name: ${koder.lastName} Age of Koder: ${koder.age} Number of Languages Koder Can Speak: ${koder.numberOfLanguagesSpoke} Country Koder is From: ${koder.country}`);
     koderListItem.append(koderItemText);
 
     return koderListItem;
+}
 
-};
+
 
 //funcion para imprimir lista de koders dentro del objeto. 
 const printKodersList = (koders, listWrapper) => {
-
     let wrapper = document.getElementById(listWrapper);
-
+    
     koders.forEach((koder) => {
         let koderNewList = createKoderList(koder);
         wrapper.append(koderNewList);
@@ -62,4 +57,3 @@ const printKodersList = (koders, listWrapper) => {
 };
 
 printKodersList(koder, "list-wrapper");
-
