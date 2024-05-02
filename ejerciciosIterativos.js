@@ -61,14 +61,15 @@ const canes = [
     2. declarar funcion que me permita recorrer cada objeto y acceder la propiedad edad para poder sumar cada uno y dividir / 4 
     
 */
-const dogAge = (age) => {
-    let result = age.map((dog) => (dog.edad));
+const dogAge = (dogArray) => {
     let sum = 0;
-    for (i = 0; i < result.length; i++) {
-        sum += result[i] / 4
+    let averageDogAge = dogArray.map((dog) => (dog.edad));
+
+    for (i = 0; i < averageDogAge.length; i++) {
+        sum += averageDogAge[i] / 4
     }
     console.log(`La edad promedio de los cuatro perritos es de: ${sum}`);
-    return (`El array incluye la edad de cada perrito: ${result}`);
+    return (`El array incluye la edad de cada perrito: ${averageDogAge}`);
 };
 
 console.log(dogAge(canes));
@@ -108,3 +109,16 @@ console.log(zipCodeArray(canes))
 /*
 4.- Necesito una lista que contenga la lista de países a los que pertenecen los perros, pero sin repetidos
 */
+
+const dogsInWhichCountry = dogArray => {
+    let dogCountry = dogArray.reduce((object, dog) => {
+        if (object.includes(object.dog)) {
+            object: [...object, dog.pais]
+        } else {
+            []
+        }
+    })
+
+};
+
+console.log(dogsInWhichCountry(canes))
